@@ -6,7 +6,7 @@ Simple js to show calendar
 # Compile
 
 ```
-$ coffee -cb calendar.coffee
+$ cake compile
 ```
 
 
