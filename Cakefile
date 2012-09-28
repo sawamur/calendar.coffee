@@ -3,6 +3,13 @@ sys = require 'sys'
 fs = require 'fs'
 
 exec = require('child_process').exec
+exerr  = (err, sout,  serr)->
+  process.stdout.write err  if err
+  process.stdout.write sout if sout
+  process.stdout.write serr if serr
 
-task 'compile','compile coffee to js', ->
-  exec("coffee -cb -o js calendar.coffee")
+task 'build','compile coffee to js', ->
+  exec "coffee -cb -o js calendar.coffee",exerr
+
+task 'spec','do specs with jasmine-node', ->
+  exec "jasmine-node --coffee spec",exerr

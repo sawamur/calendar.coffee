@@ -6,7 +6,7 @@ Simple js to show calendar
 # Compile
 
 ```
-$ cake compile
+$ cake build
 ```
 
 
@@ -32,4 +32,11 @@ for w in ws
   console.log "--"
 ```
 
+
+# testing
+
+
+```
+$ cake spec
+```
 
