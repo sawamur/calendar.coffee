@@ -1,0 +1,36 @@
+<!doctype>
+<head>
+  <script src="js/calendar.js" ></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+  <style type="text/css">
+    td {
+      text-align: right;
+      border: 1px solid #eee;
+    }
+    table {
+      border: 1px solid #eee;
+      padding: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <table id="cal"></table>
+
+  <script>
+    $(function(){
+      var d = new Date(2012,8); //<- Sept 2012
+      var c = new Calendar(d); 
+      var table = $("#cal");
+      table.append($("<caption>" + d.getFullYear() + "/" + (d.getMonth() + 1) + "</caption>"));				     
+      c.weeks().forEach(function(w){
+        var tr = $("<tr/>");
+        w.forEach(function(d){
+          tr.append( $("<td>" + d.getDate() + "</td>") );
+        })
+        table.append(tr);
+      });
+     });
+  </script>
+
+</body>
