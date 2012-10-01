@@ -1,8 +1,7 @@
 
-root = exports ? window
 
-class root.Calendar
 
+class Calendar
   constructor: (baseDate=(new Date),firstWeekDay=0)->
     @baseDate = baseDate
     @first_week_day = firstWeekDay
@@ -31,3 +30,9 @@ class root.Calendar
     getDayOrZero = (date) ->
       (if date.getMonth() is month then date.getDate() else 0)
     @monthDates year, month, getDayOrZero
+
+
+if module?.exports
+  module.exports = Calendar
+else
+  window.Calendar = Calendar

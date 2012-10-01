@@ -19,7 +19,7 @@ browser
 
 for node.js
 ```
-Calendar = require("./calendar").Calendar
+Calendar = require("./calendar")
 ```
 
 ```
